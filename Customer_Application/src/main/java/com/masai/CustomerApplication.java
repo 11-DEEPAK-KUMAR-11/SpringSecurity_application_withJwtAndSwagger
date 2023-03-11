@@ -3,7 +3,6 @@ package com.masai;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -14,10 +13,11 @@ import io.swagger.v3.oas.annotations.security.SecuritySchemes;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 
-
+@SpringBootApplication
 //@SecurityScheme(name = "/", scheme = "jwt", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
+//http://localhost:8080/swagger-ui/index.html
 
-@OpenAPIDefinition(info = @Info(title = "Customer API", version = "1.1"),
+@OpenAPIDefinition(info = @Info(title = "CUSTOMER API", version = "1.1"),
 				security = {
 							@SecurityRequirement(name = "basicAuth"), 
 							@SecurityRequirement(name = "bearerToken")
@@ -31,7 +31,6 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @SecurityScheme(name = "bearerToken", type = SecuritySchemeType.HTTP, scheme = "bearer", bearerFormat = "JWT")
 })
 
-@SpringBootApplication
 public class CustomerApplication {
 
 	public static void main(String[] args) {
